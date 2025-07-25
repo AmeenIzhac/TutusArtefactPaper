@@ -1,0 +1,304 @@
+\documentclass[a4paper,UKenglish]{darts-v2021}
+%This is a template for producing DARTS artifact descriptions.
+%for A4 paper format use option "a4paper", for US-letter use option "letterpaper"
+%for british hyphenation rules use option "UKenglish", for american hyphenation rules use option "USenglish"
+% for section-numbered lemmas etc., use "numberwithinsect"
+%for anonymousing the authors (e.g. for double-blind review), add "anonymous"
+%for enabling a two-column layout for the author/affilation part (only applicable for > 6 authors), use "authorcolumns"
+%for producing a PDF according the PDF/A standard, add "pdfa"
+
+\usepackage{microtype}%if unwanted, comment out or use option "draft"
+\usepackage{xspace}
+
+%\graphicspath{{./graphics/}}%helpful if your graphic files are in another directory
+
+%\nolinenumbers to disable line numbers
+
+\bibliographystyle{plainurl}% the mandatory bibstyle
+
+% Commands for artifact descriptions
+% Written by Camil Demetrescu and Erik Ernst
+% April 8, 2014
+
+\newenvironment{scope}{\section{Scope}}{}
+\newenvironment{content}{\section{Content}}{}
+\newenvironment{getting}{\section{Getting the artifact} The artifact
+endorsed by the Artifact Evaluation Committee is available free of
+charge on the Dagstuhl Research Online Publication Server (DROPS).}{}
+\newenvironment{platforms}{\section{Tested platforms}}{}
+\newcommand{\license}[1]{{\section{License}#1}}
+\newcommand{\mdsum}[1]{{\section{MD5 sum of the artifact}#1}}
+\newcommand{\artifactsize}[1]{{\section{Size of the artifact}#1}}
+\newcommand{\Scribble}[0]{\textsc{Scribble}\xspace}
+\newcommand{\Effpi}[0]{\textsc{Effpi}\xspace}
+\newcommand{\newTool}[0]{\textsc{Tutus}\xspace}
+\newcommand{\MPST}[0]{\textsc{MPST}\xspace}
+\newcommand{\Scala}[0]{\textsc{Scala}\xspace}
+\newcommand{\Haskell}[0]{\textsc{Haskell}\xspace}
+\newcommand{\nuScr}[0]{\texorpdfstring{$\nu$\textsc{Scr}}{nuScr}\xspace}
+
+% Author macros::begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \title{A Sample Research Description for the DARTS series (Artifact)} %TODO Please add
+\title{Designing Asynchronous Multiparty Protocols with Crash-Stop Failures
+(Artifact)}
+
+% \titlerunning{A Sample DARTS Research Description (Artifact)} %optional, in case that the title is too long; the running title should fit into the top page column
+
+% ARTIFACT: Authors may not be exactly the same as the related scholarly paper, e.g., you may want to include authors who contributed to the preparation of the artifact, but not to the companion paper
+
+\author{Ping Hou}{University of Oxford, UK}{%
+ping.hou@cs.ox.ac.uk
+}{%
+https://orcid.org/0000-0001-6899-9971
+}{}
+\author{Ameen Izhac}{%
+University of Oxford, UK
+}{%
+scro5167@ox.ac.uk
+}{%
+https://orcid.org/0000-0003-1236-7160
+}{}
+\author{Nobuko Yoshida}{University of Oxford, UK}{%
+nobuko.yoshida@cs.ox.ac.uk
+}{%
+https://orcid.org/0000-0002-3925-8557
+}{}
+
+\authorrunning{P. Hou, A. Izhac, N. Yoshida}
+
+\Copyright{P. Hou, A. Izhac, N. Yoshida}
+
+
+\ccsdesc[500]{Software and its engineering~Source code generation}
+\ccsdesc[500]{Software and its engineering~Concurrent programming languages}
+\ccsdesc[500]{Theory of computation~Process calculi}
+\ccsdesc[500]{Theory of computation~Distributed computing models}
+
+
+\keywords{Session Types, Concurrency, Failure Handling, Code Generation, Scala} %TODO mandatory; please add comma-separated list of keywords
+
+%TODO Please provide information to the related scholarly article
+
+
+%\RelatedArticle{John Q. Open and Joan R. Access, ``A very nice paper'', in Proceedings of the 30th Conference on Very Important Topics (CVIT 2016), LIPIcs, Vol.~0, pp.~0:1--0:2, 2016.\newline \url{https://doi.org/10.4230/LIPIcs.xxx.xxx.xxx}}
+
+\acknowledgements{We thank the anonymous reviewers for their useful comments and suggestions.
+We thank Jia Qing Lim for his contribution to the \Effpi extension. We thank
+Alceste Scalas for useful discussions and advice in the development of this
+paper and for his assistance with \Effpi.}%optional
+\funding{
+  Work supported by:
+  EPSRC EP/T006544/2, EP/K011715/1,
+EP/K034413/1, EP/L00058X/1, EP/N027833/2, EP/N028201/1, EP/T014709/2, EP/V000462/1,
+EP/X015955/1, NCSS/EPSRC VeTSS,  and Horizon EU TaRDIS 101093006.
+}%
+
+
+%\funding{(Optional) general funding statement \dots}%optional, to capture a funding statement, which applies to all authors. Please enter author specific funding statements as fifth argument of the \author macro.
+
+%\nolinenumbers %uncomment to disable line numbering
+
+%Editor-only macros:: begin (do not touch as author)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Volume{9}
+\Issue{2}
+\Article{9}
+\RelatedArticle{A.D. Barwell, P. Hou, N. Yoshida, F. Zhou, ``Designing
+  Asynchronous Multiparty Protocols with Crash-Stop Failures'', in 37th
+  European Conference on Object-Oriented Programming (ECOOP 2023), LIPIcs,
+  Vol.~263, pp.~30:1--30:29, 2023.
+  \newline\url{https://doi.org/10.4230/LIPIcs.ECOOP.2023.30}}
+\RelatedConference{37th European Conference on Object-Oriented Programming
+(ECOOP 2023), July 17-21, 2023, Seattle, Washington, United States}
+% Editor-only macros::end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  \input{abstract.tex}
+\end{abstract}
+
+% ARTIFACT: please stick to the structure of 7 sections provided below
+
+% ARTIFACT: section on the scope of the artifact (what claims of the paper are intended to be backed by this artifact?)
+\begin{scope}
+The artifact presents \newTool, a code generation toolchain supporting automatic crash-stop failure
+generation for Multiparty Session Type (MPST) protocols and \Scala \Effpi code generation.
+%
+\newTool is written in \Haskell and implements both global and local types
+from the related article.
+
+Global types are derived from a subset of the \Scribble syntax~\cite{YHNN2013}
+accepted by \nuScr, extended to support our crash-handling model, which is
+consumed by \newTool as input. Protocol-conforming \Scala code is generated via
+projection to local types. Runtime types, as indicated in the related article,
+are not supported in \newTool since these are not used when specifying
+protocols. Generated code uses an extended form of the \Effpi concurrency
+library; although executable upon generation, the code can be extended and
+integrated with existing systems by the programmer.
+
+The artifact contains protocol specifications for all examples presented in the
+related article. The artifact additionally includes dependencies and
+configuration files in order to facilitate the execution of generated code.
+%
+% Link to the contents of the paper: it implements the global and local types and their projection. Runtime types are not supported at generation (since they are not supposed to be introduced by the programmer). Tool is written in Haskell and serves as an example for how asynchronous MPST protocols with crash-stop behaviour can be used to generate correct-by-construction executable code.
+% The artifact contains all examples in the related article.
+% Quick point about the docker contents -- it enables generation of code but also its execution via an included sbt build file (and installation)
+
+For more details, please consult Section~6 in the related article, Appendix~G in
+the full version~\cite{FullVer}, and the \texttt{README} file in the artifact.
+% Also Sec. Blah and Appendix Blah in the paper
+
+\iffalse
+Our paper presents \newTool, a code generation toolchain that utilises
+asynchronous \emph{multiparty session types} (MPST) with \emph{crash-stop} semantics to
+support failure handling protocols.
+The tool generates \Scala code that uses the \Effpi concurrency
+library~\cite{PLDI19Effpi}.
+
+\newTool accepts a subset of the \Scribble syntax~\cite{YHNN2013} accepted by
+\nuScr, with two extensions to support our crash-handling model.
+Code generated by \newTool uses an extended form of the \Effpi concurrency
+library.
+For more details, please consult the \texttt{README} file in the artifact.
+\fi
+\end{scope}
+
+% ARTIFACT: section on the contents of the artifact (code, data, etc.)
+\begin{content}
+The artifact is packaged as a Docker image, containing the source code of
+\newTool, our tool, and our extended \Effpi concurrency library.
+The artifact also includes the benchmarks used in the paper to evaluate our
+toolchain.
+
+We enumerate the contents of the home user directory (\texttt{/home/mpst/})
+below ($^{*}$ indicates an executable file):
+\begin{itemize}
+\item \texttt{Lib/Tutus/}: contains the source code for our \newTool tool.
+  We use the Stack build system.
+\item \texttt{build.sbt}: is the \Scala sbt build file used to compile and run
+  the generated code.
+\item \texttt{effpi/}: contains the extended \Effpi concurrency library.
+  Note that references to authors and/or copyright holders are to
+  \emph{original} authors and/or copyright holders of the library.
+\item \texttt{examples/}: contains example protocols.
+  files in \texttt{effpi}.
+\item \texttt{project/}: configuration files used by \texttt{build.sbt}.
+\item \texttt{runScala.sh}$^{*}$: script for running a single \Scala file
+  generated by \newTool.
+\end{itemize}
+
+\noindent
+The home user directory may also contain the below subdirectories.
+
+\begin{itemize}
+\item \texttt{scala/}: default output directory for generated code, produced
+  by \newTool.
+\item \texttt{effpi\_sandbox/}:
+  used to run generated code, produced by \texttt{runScala.sh}.
+\end{itemize}
+
+\end{content}
+
+% ARTIFACT: section containing links to sites holding the
+% latest version of the code/data, if any
+\begin{getting}
+% leave empty if the artifact is only available on the DROPS server.
+% otherwise, provide links to the latest version of the artifact (e.g., on github)
+In addition, the artifact is also available at:
+\url{https://zenodo.org/record/7974824}.
+The source files can be accessed at
+\url{https://github.com/AmeenIzhac/TutusArtefact}.
+\end{getting}
+
+% ARTIFACT: section specifying the platforms on which the artifact is known to
+% work, including requirements beyond the operating system such as large
+% amounts of memory or many processor cores
+\begin{platforms}
+  The artifact has been tested under Linux (Ubuntu 22.04.01) and macOS (Ventura
+  13.3.1, M2).
+  %
+  In principle, it should be able to run under a correct installation of Docker.
+\end{platforms}
+
+% ARTIFACT: section specifying the license under which the artifact is
+% made available
+\license{The artifact is available under the MIT licence (\url{https://opensource.org/license/mit/}).}
+
+% ARTIFACT: section specifying the md5 sum of the artifact master file
+% uploaded to the Dagstuhl Research Online Publication Server, enabling
+% downloaders to check that the file is the expected version and suffered
+% no damage during download.
+\mdsum{94cc09960ca3a9558cc30925291eca5d}
+
+% ARTIFACT: section specifying the size of the artifact master file uploaded
+% to the Dagstuhl Research Online Publication Server
+\artifactsize{1.3 GiB}
+
+% ARTIFACT: optional appendix
+\appendix
+\section{Additional Information}
+For additional information, readers are invited to consult the
+\texttt{README.md} file in the Docker image, which contains information on how
+to use the artifact.
+Alternatively, the \texttt{README} file is available online at
+\url{https://github.com/AmeenIzhac/TutusArtefact/blob/main/README.md}.
+
+\section{On Functionality and Reusability}
+% 
+The artifact is functional with respect to four aspects:
+% 
+\begin{enumerate}
+\item \label{it:f1} \newTool can be used to generate crash safe \Scribble code from \Scribble protocol specifications,
+\item \label{it:f1} generate \Scala code to implement multiparty protocols,
+\item \label{it:f2} protocol specifications for all examples given in the related article are included, and
+\item \label{it:f3} \newTool generates Scala code in negligible time.
+\end{enumerate}
+% 
+Instructions for code generation can be found in the aforementioned
+\texttt{README.md} file. The example protocol specifications can be found in the
+corresponding directory in home user directory of the artifact.
+% 
+For our given examples, the time needed for code generation is within
+milliseconds. The raw results files when can be generated and found in 
+\texttt{Lib/Tutus/bench}. These results were
+taken running \newTool directly on the reported test machine, and not within the
+Docker container. Accordingly, generation times taken within the docker
+container may be subject to increased variance due to the small average
+generation times. The user can run our benchmarks for all examples, using the
+instructions given in the \texttt{README.md} file.
+
+Since \newTool takes \Scribble protocol files as input, its application is not
+limited to those provided in the artifact, and is therefore reusable. The
+accepted syntax our \Scribble language variant is described in the
+\texttt{README.md} file within the artifact, and the user may write
+communications protocols of their own.
+% 
+\newTool will benchmark a subset of protocol files in the
+\texttt{Lib/Tutus/bench/protocols} directory. 
+
+The code generated by \newTool is standard \Scala, and can therefore be extended and integrated into novel or existing systems.
+% 
+To facilitate this, we include both our extended version of the \Effpi
+concurrency library and the \texttt{sbt} build and configuration files needed to
+compile and run the generated code. Although default values are used for message
+payloads and branch selection when sending messages, these can be specialised
+with values and code meaningful to the user and wider system.
+
+
+% ARTIFACT: include here any additional references, if needed...
+
+%%
+%% Bibliography
+%%
+
+%% Either use bibtex (recommended),
+
+\bibliography{references}
+
+%% .. or use the thebibliography environment explicitely
+
+
+
+\end{document}

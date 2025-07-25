@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{FullVer}
+Adam~D. Barwell, Ping Hou, Nobuko Yoshida, and Fangyi Zhou.
+\newblock Designing asynchronous multiparty protocols with crash-stop failures.
+\newblock {\em CoRR}, abs/2305.06238, 2023.
+\newblock \href {https://arxiv.org/abs/2305.06238} {\path{arXiv:2305.06238}}, \href {https://doi.org/10.48550/arXiv.2305.06238} {\path{doi:10.48550/arXiv.2305.06238}}.
+
+\bibitem{YHNN2013}
+Nobuko Yoshida, Raymond Hu, Rumyana Neykova, and Nicholas Ng.
+\newblock The scribble protocol language.
+\newblock In {\em 8th International Symposium on Trustworthy Global Computing - Volume 8358}, TGC 2013, pages 22--41, Berlin, Heidelberg, 2014. Springer-Verlag.
+\newblock \href {https://doi.org/10.1007/978-3-319-05119-2_3} {\path{doi:10.1007/978-3-319-05119-2_3}}.
+
+\end{thebibliography}

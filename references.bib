@@ -1,0 +1,52 @@
+@inproceedings{PLDI19Effpi,
+author = {Scalas, Alceste and Yoshida, Nobuko and Benussi, Elias},
+title = {{Verifying Message-Passing Programs with Dependent Behavioural
+  Types}},
+year = {2019},
+isbn = {9781450367127},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+_url = {https://doi.org/10.1145/3314221.3322484},
+doi = {10.1145/3314221.3322484},
+abstract = {Concurrent and distributed programming is notoriously hard. Modern languages and toolkits ease this difficulty by offering message-passing abstractions, such as actors (e.g., Erlang, Akka, Orleans) or processes (e.g., Go): they allow for simpler reasoning w.r.t. shared-memory concurrency, but do not ensure that a program implements a given specification. To address this challenge, it would be desirable to specify and verify the intended behaviour of message-passing applications using types, and ensure that, if a program type-checks and compiles, then it will run and communicate as desired. We develop this idea in theory and practice. We formalise a concurrent functional language λ≤π, with a new blend of behavioural types (from π-calculus theory), and dependent function types (from the Dotty programming language, a.k.a. the future Scala 3). Our theory yields four main payoffs: (1) it verifies safety and liveness properties of programs via type-level model checking; (2) unlike previous work, it accurately verifies channel-passing (covering a typical pattern of actor programs) and higher-order interaction (i.e., sending/receiving mobile code); (3) it is directly embedded in Dotty, as a toolkit called Effpi, offering a simplified actor-based API; (4) it enables an efficient runtime system for Effpi, for highly concurrent programs with millions of processes/actors.},
+booktitle = {Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+pages = {502--516},
+numpages = {15},
+keywords = {temporal logic, Dotty, dependent types, behavioural types, model checking, actors, Scala, processes},
+location = {Phoenix, AZ, USA},
+series = {PLDI 2019}
+}
+@inproceedings{YHNN2013,
+  author = {Yoshida, Nobuko and Hu, Raymond and Neykova, Rumyana and Ng, Nicholas},
+  title = {The Scribble Protocol Language},
+  booktitle = {8th International Symposium on Trustworthy Global Computing - Volume 8358},
+  series = {TGC 2013},
+  year = {2014},
+  isbn = {978-3-319-05118-5},
+  location = {Buenos Aires, Argentina},
+  pages = {22--41},
+  numpages = {20},
+  url = {https://doi.org/10.1007/978-3-319-05119-2_3},
+  doi = {10.1007/978-3-319-05119-2_3},
+  acmid = {3092399},
+  publisher = {Springer-Verlag},
+  address = {Berlin, Heidelberg},
+}
+
+@article{FullVer,
+  author       = {Adam D. Barwell and
+                  Ping Hou and
+                  Nobuko Yoshida and
+                  Fangyi Zhou},
+  title        = {Designing Asynchronous Multiparty Protocols with Crash-Stop Failures},
+  journal      = {CoRR},
+  volume       = {abs/2305.06238},
+  year         = {2023},
+  url          = {https://doi.org/10.48550/arXiv.2305.06238},
+  doi          = {10.48550/arXiv.2305.06238},
+  eprinttype    = {arXiv},
+  eprint       = {2305.06238},
+  timestamp    = {Tue, 16 May 2023 18:32:51 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2305-06238.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}

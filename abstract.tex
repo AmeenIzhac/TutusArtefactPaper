@@ -1,0 +1,50 @@
+As communication %among interconnected distributed systems 
+in distributed software systems grows increasingly complex, 
+specifying \emph{protocols} and maintaining their correctness under evolving requirements has become essential. 
+This paper investigates an automatic transformation of distributed protocols, proposing general \emph{validity conditions} that guarantee the correctness of the transformed protocols. We target \emph{Multiparty Session Types} (\MPST), where a global protocol (type) ensures that well-typed distributed programs communicate without type errors or stuck states --  guaranteeing deadlock-freedom and liveness by construction -- with a focus on enhancing \emph{resilience} to failures in distributed systems. While various fault-tolerant session type theories have been proposed, existing approaches require programmers to explicitly write failure-handling constructs,  a burdensome and error-prone task that risks incorrect or unintended behaviours. 
+
+We introduce three automatic transformations from global protocols without failure handling to fault-tolerant variants,  each reflecting a distinct failure-handling or recovery strategy tailored to specific reliability requirements. 
+%under {\color{red}different assumptions: do we have a better word?. We can write here a bit three failures.} 
+The resulting protocols satisfy key validity conditions: 
+\begin{enumerate}
+\item  preservation of type safety, deadlock-freedom, and liveness; and 
+\item  preservation of communication causality. 
+%\item preservation of successful communication reachability.
+\end{enumerate}
+We implement these protocol transformations and API generation for \Scala 
+in our toolchain, \newTool, and evaluate it  on \MPST protocols, including real-world case studies.  
+The results 
+demonstrate that \newTool scales with protocol size 
+and transformation complexity while    
+maintaining practical overhead, highlighting the effectiveness of our approach.
+
+\iffalse
+
+Session types provide a typing discipline for message-passing systems.
+  However,  most session type approaches assume an ideal world: one in which
+  everything is reliable and without failures. Yet this is in stark contrast with
+  distributed systems in the real world.
+ To address this limitation, we introduce \theTool, a
+  code generation toolchain that utilises asynchronous \emph{multiparty session
+  types} (MPST) with \emph{crash-stop} semantics to support failure handling protocols.
+
+ We augment asynchronous MPST and processes with \emph{crash handling} branches.
+ Our approach requires no user-level syntax extensions for global types
+ and features a formalisation of global semantics, which captures
+ complex behaviours induced by crashed/crash handling processes.
+ The sound and complete correspondence between global and local type semantics
+ guarantees deadlock-freedom, protocol conformance, and liveness of typed processes
+ in the presence of crashes.
+
+Our theory is implemented in the toolchain \theTool,
+which provides \emph{correctness by construction}.
+\theTool extends the \Scribble multiparty protocol language
+to generate protocol-conforming \Scala code, using the \Effpi concurrent programming
+library.
+We extend both \Scribble and \Effpi
+to support \emph{crash-stop} behaviour.
+We demonstrate the feasibility of our methodology and evaluate
+\theTool with examples extended from both
+session type and distributed systems literature.
+
+\fi
